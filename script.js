@@ -13,9 +13,7 @@ function addBook(title, author) {
 function removeBook(element) {
   if (element.classList.contains('remove')) {
     const removeItem = element.parentElement;
-    books = books.filter((book) => {
-      book.title !== element
-    });
+    books = books.filter((book) => book.title !== element);
     removeItem.remove();
     localStorage.setItem('books', JSON.stringify(books));
   }
