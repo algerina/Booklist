@@ -2,7 +2,7 @@ const title = document.querySelector('#inputTitle');
 const author = document.querySelector('#inputAuthor'); // eslint-disable-line no-undef
 const bookList = document.querySelector('#bookList');// eslint-disable-line no-unused-vars
 const addBtn = document.querySelector('#addBtn');
-let books = JSON.parse(localStorage.getItem('books')) || [];
+const books = JSON.parse(localStorage.getItem('books')) || [];
 
 function addBook(title, author) {
   books.push({ title, author });
@@ -14,8 +14,7 @@ function removeBook(index) {
   books.splice(index, 1);
   if (localStorage.getItem('books') === null) {
     localStorage.setItem('books', JSON.stringify(books));
-  }
-  else {
+  }else {
     localStorage.setItem('books', JSON.stringify(books));
   }
   if (index.classList.contains('remove')) {
