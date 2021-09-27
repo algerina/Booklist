@@ -14,8 +14,7 @@ function removeBook(index) {
   books.splice(index, 1);
   if (localStorage.getItem('books') === null) {
     localStorage.setItem('books', JSON.stringify(books));
-
-  }else {
+  } else {
     localStorage.setItem('books', JSON.stringify(books));
   }
   if (index.classList.contains('remove')) {
