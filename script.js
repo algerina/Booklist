@@ -1,7 +1,7 @@
 const title = document.querySelector('#inputTitle');
 const author = document.querySelector('#inputAuthor'); // eslint-disable-line no-undef
 const bookList = document.querySelector('#bookList');// eslint-disable-line no-unused-vars
-const add = document.querySelector('#add');
+const addBtn = document.querySelector('#addBtn');
 let books = JSON.parse(localStorage.getItem('books')) || [];
 
 function addBook(title, author) {
@@ -10,12 +10,17 @@ function addBook(title, author) {
   return { title, author };
 }
 
-function removeBook(element) {
-  if (element.classList.contains('remove')) {
-    const removeItem = element.parentElement;
-    books = books.filter((book) => book.title !== element);
-    removeItem.remove();
+function removeBook(index) {
+  books.splice(index, 1);
+  if (localStorage.getItem('books') === null) {
     localStorage.setItem('books', JSON.stringify(books));
+  }
+  else {
+    localStorage.setItem('books', JSON.stringify(books));
+  }
+  if (index.classList.contains('remove')) {
+    const removeItem = index.parentElement;
+    removeItem.remove();
   }
 }
 function datastorage({ title, author }) {
@@ -39,7 +44,7 @@ function datastorage({ title, author }) {
 
 books.forEach(datastorage);
 
-add.addEventListener('click', (e) => {
+addBtn.addEventListener('click', (e) => {
   e.preventDefault();
 
   if (title.validity.valueMissing && author.validity.valueMissing) {
