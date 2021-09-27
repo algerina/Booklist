@@ -21,7 +21,7 @@ function removeBook(element) {
   }
 }
 function datastorage({ title, author }) {
-  const wrapper = document.createElement('div');
+  const Wrapper = document.createElement('div');
   const titleHeader = document.createElement('h2');
   const authorHeader = document.createElement('h2');
   const removebtn = document.createElement('button');
@@ -31,8 +31,8 @@ function datastorage({ title, author }) {
   removebtn.textContent = 'Remove';
   removebtn.classList.add('remove');
 
-  wrapper.append(titleHeader, authorHeader, removebtn);
-  bookList.appendChild(wrapper);
+  Wrapper.append(titleHeader, authorHeader, removebtn);
+  bookList.appendChild(Wrapper);
   removebtn.addEventListener('click', (e) => {
     const removeItem = e.target;
     removeBook(removeItem);
