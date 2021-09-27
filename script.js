@@ -1,9 +1,9 @@
 const title = document.querySelector('#inputTitle');
 const author = document.querySelector('#inputAuthor'); // eslint-disable-line no-undef
-const bookList = document.querySelector('#bookList');
+const bookList = document.querySelector('#bookList');// eslint-disable-line no-unused-vars
 const add = document.querySelector('#add');
-// const form = document.querySelector('#bookForm');
-const books = JSON.parse(localStorage.getItem('books')) || [];// eslint-disable-line no-unused-vars
+const form = document.querySelector('#bookForm');
+let books = JSON.parse(localStorage.getItem('books')) || [];
 
 function addBook(title, author) {
   books.push({ title, author });
@@ -14,14 +14,13 @@ function addBook(title, author) {
 function removeBook(element) {
   if (element.classList.contains('remove')) {
     const removeItem = element.parentElement;
-
     books = books.filter((book) => {
     
     });
     removeItem.remove();
     localStorage.setItem('books', JSON.stringify(books));
 }
-
+}
 function datastorage({ title, author }) {
   const Wrapper = document.createElement('div');
   const titleHeader = document.createElement('h2');
@@ -61,5 +60,3 @@ add.addEventListener('click', (e) => {
     title.focus();
   }
 });
-
-}
