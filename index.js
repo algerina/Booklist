@@ -1,6 +1,7 @@
 /* eslint-disable no-use-before-define */
+/* eslint-disable */
 const title = document.querySelector('#inputTitle');
-const author = document.querySelector('#inputAuthor'); // eslint-disable-line no-undef
+const author = document.querySelector('#inputAuthor');
 const bookList = document.querySelector('#bookList');// eslint-disable-line no-unused-vars
 const addBtn = document.querySelector('#addBtn');
 const books = JSON.parse(localStorage.getItem('books')) || [];
