@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 const title = document.querySelector('#inputTitle');
 const author = document.querySelector('#inputAuthor'); // eslint-disable-line no-undef
 const bookList = document.querySelector('#bookList');// eslint-disable-line no-unused-vars
@@ -5,7 +6,7 @@ const addBtn = document.querySelector('#addBtn');
 const books = JSON.parse(localStorage.getItem('books')) || [];
 
 class Book {
-  constructor(title, author, id){
+  constructor(title, author, id) {
     this.title = title;
     this.author = author;
     this.id = id;
@@ -13,10 +14,10 @@ class Book {
 }
 
 addBook = (title, author) => {
-    books.push({ title, author });
-    localStorage.setItem('books', JSON.stringify(books));
-    return { title, author };
-}
+  books.push({ title, author });
+  localStorage.setItem('books', JSON.stringify(books));
+  return { title, author };
+};
 
 removeBook = (index) => {
   books.splice(index, 1);
@@ -29,7 +30,7 @@ removeBook = (index) => {
     const removeItem = index.parentElement;
     removeItem.remove();
   }
-}
+};
 datastorage = ({ title, author }) => {
   const Wrapper = document.createElement('div');
   const titleHeader = document.createElement('h2');
@@ -47,7 +48,7 @@ datastorage = ({ title, author }) => {
     const removeItem = e.target;
     removeBook(removeItem);
   });
-}
+};
 
 books.forEach(datastorage);
 
