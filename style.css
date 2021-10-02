@@ -41,8 +41,9 @@ h1 {
 
 .wrapper {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: space-between;
+
 }
 
 h3 {
@@ -58,7 +59,7 @@ h3 {
 #bookList {
   width: 70%;
   border: solid red 2px;
-  margin: 75px;
+  margin: 32px 184px 20px
 }
 
 .text {
