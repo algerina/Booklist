@@ -32,7 +32,7 @@ const removeBook = (index) => {
   }
 };
 const datastorage = ({ title, author }) => {
-  const Wrapper = document.createElement('div');
+  const Wrapper = document.createElement('ul');
   const titleHeader = document.createElement('h2');
   const authorHeader = document.createElement('h2');
   const removebtn = document.createElement('button');
@@ -40,6 +40,7 @@ const datastorage = ({ title, author }) => {
   authorHeader.innerText = author;
   removebtn.textContent = 'Remove';
   removebtn.classList.add('remove');
+  Wrapper.classList.add('wrapper');
 
   Wrapper.append(titleHeader, authorHeader, removebtn);
   bookList.appendChild(Wrapper);
