@@ -65,3 +65,14 @@ h3 {
   display: flex;
   flex-direction: column;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navList {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
